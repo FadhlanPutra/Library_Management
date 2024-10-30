@@ -5,6 +5,7 @@ import ResponsiveNavLink from '@/Components/ResponsiveNavLink';
 import { Sidebar, SidebarBody, SidebarLink } from '@/Components/ui/sidebar';
 import { Head, Link, usePage } from '@inertiajs/react';
 import { IconBrandTabler, IconUserBolt, IconSettings, IconArrowLeft, IconBook2, IconCirclePlusFilled, IconInfoCircleFilled, IconMenu3, IconUsersGroup } from '@tabler/icons-react';
+import { METHODS } from 'http';
 import { PropsWithChildren, ReactNode, useState } from 'react';
 
 export default function Authenticated({
@@ -15,7 +16,7 @@ export default function Authenticated({
 
     const [showingNavigationDropdown, setShowingNavigationDropdown] =
         useState(false);
-        const links = [
+        const links = [ 
             {
                 label: "Beranda",
                 href: "dashboard",
