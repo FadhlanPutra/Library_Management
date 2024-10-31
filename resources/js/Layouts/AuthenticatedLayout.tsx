@@ -132,7 +132,7 @@ export default function Authenticated({
 function Logo() {
 	return (
     	<Link href="#" className="font-normal flex space-x-2 items-center text-sm text-black dark:text-white py-1 relative z-20">
-        	<img className="w-10 me-1" src="img/buku.png"/>
+        	<img className="w-10 me-1" src="img/buku.webp"/>
         	<span className="font-medium mt-2">Perpustakaan Pesat</span>
     	</Link>
 	);

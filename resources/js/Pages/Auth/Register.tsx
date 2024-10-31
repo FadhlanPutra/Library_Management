@@ -121,6 +121,7 @@ export default function Register() {
                 </div>
                 <div className='mt-2 text-center'>
                     <Link
+                        rel="prefetch"
                         href={route('login')}
                         className="rounded-md text-sm text-white underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                     >

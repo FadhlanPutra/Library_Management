@@ -362,7 +362,7 @@ export default function Welcome({
                 </div>
             </div> */}
             <div className="flex flex-col justify-center min-h-screen items-center">
-                <img src='/img/Library.png' alt="Logo" className="w-full max-w-md"/>
+                <img src='/img/library.webp' alt="Logo" className="w-full max-w-md"/>
                 <div className='flex flex-col justify-center items-center w-1/2 text-center'>
                     <h1 className='font-bold text-2xl mt-2 mb-2'>Welcome to Library Pesat IT XPRO</h1>
                     <p className='text-center font-medium'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis quibusdam placeat, veritatis iure tempore vitae, dicta autem aspernatur praesentium fuga eum enim? Sunt minus temporibus repellat autem, asperiores recusandae minima!</p>
