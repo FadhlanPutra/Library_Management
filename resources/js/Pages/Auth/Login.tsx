@@ -6,6 +6,7 @@ import TextInput from '@/Components/TextInput';
 import GuestLayout from '@/Layouts/GuestLayout';
 import { Head, Link, useForm } from '@inertiajs/react';
 import { FormEventHandler } from 'react';
+import React, { useRef, useState } from 'react';
 
 export default function Login({
     status,
@@ -37,6 +38,8 @@ export default function Login({
                     {status}
                 </div>
             )}
+
+            
 
             <div className=' text-white'>
                 <h1 className='font-bold text-3xl'>Selamat Datang di <br></br>Perpustakaan SMK PESAT</h1>
@@ -94,6 +97,7 @@ export default function Login({
                     </label>
                     {canResetPassword && (
                         <Link
+                            rel="prefetch"
                             href={route('password.request')}
                             className="rounded-md text-sm text-white underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                         >
@@ -113,3 +117,4 @@ export default function Login({
         </GuestLayout>
     );
 }
+
