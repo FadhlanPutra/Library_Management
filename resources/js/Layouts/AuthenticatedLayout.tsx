@@ -4,7 +4,7 @@ import NavLink from '@/Components/NavLink';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink';
 import { Sidebar, SidebarBody, SidebarLink } from '@/Components/ui/sidebar';
 import { Head, Link, usePage } from '@inertiajs/react';
-import { IconBrandTabler, IconUserBolt, IconSettings, IconArrowLeft, IconBook2, IconCirclePlusFilled, IconInfoCircleFilled, IconMenu3, IconUsersGroup } from '@tabler/icons-react';
+import { IconBrandTabler, IconUserBolt, IconSettings, IconBook2, IconCirclePlusFilled, IconInfoCircleFilled, IconMenu3, IconUsersGroup, IconLogout2 } from '@tabler/icons-react';
 import { METHODS } from 'http';
 import { PropsWithChildren, ReactNode, useState } from 'react';
 
@@ -70,7 +70,7 @@ export default function Authenticated({
                 label: "Keluar",
                 href: "logout",
                 icon: (
-                  <IconArrowLeft className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
+                  <IconLogout2 className="text-neutral-700 dark:text-neutral-200 h-5 w-5 mt-48 flex-shrink-0" />
                 ),
               },
             ];
