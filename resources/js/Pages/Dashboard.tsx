@@ -19,18 +19,17 @@
     const Dashboard = () => {
     return (
         <AuthenticatedLayout>
-        <Head title="Dashboard" />
-        <nav>
+            <Head title="Dashboard" />
+            <nav>
 
-        </nav>
-        <DashboardContent/>
-        <DashboardContent2/>
+            </nav>
+            <DashboardContent/>
+            <DashboardContent2/>
         </AuthenticatedLayout>
     );
     }
 
-    const OptimizedDashboard = withmemo(Dashboard);
-    export default OptimizedDashboard;
+    export default Dashboard;
 
 
 
