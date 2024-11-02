@@ -2,7 +2,7 @@ import ApplicationLogo from '@/Components/ApplicationLogo';
 import Dropdown from '@/Components/Dropdown';
 import NavLink from '@/Components/NavLink';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink';
-import { Sidebar, SidebarBody, SidebarLink } from '@/Components/ui/sidebar';
+import { Sidebar, SidebarBody, SidebarLink, SidebarLinkLogout } from '@/Components/ui/sidebar';
 import withMemo from '@/lib/withMemo';
 import { Head, Link, usePage } from '@inertiajs/react';
 import { IconBrandTabler, IconUserBolt, IconSettings, IconBook2, IconCirclePlusFilled, IconInfoCircleFilled, IconMenu3, IconUsersGroup, IconLogout2 } from '@tabler/icons-react';
@@ -70,14 +70,6 @@ const Authenticated = React.memo(function Authenticated({
                   <IconSettings className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
                 ),
               },
-              {
-                label: "Keluar",
-                href: "logout",
-                isLogout: 'true',
-                icon: (
-                  <IconLogout2 className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
-                ),
-              },
             ];
           const [open, setOpen] = useState(false);
     return (
@@ -93,17 +85,16 @@ const Authenticated = React.memo(function Authenticated({
                         	))}
                     	</div>
                 	</div>
-                    <SidebarLink
-                    
+                    <SidebarLinkLogout
                       link={{
-                      label: "Keluar",
-                      href: "logout",
-                      icon: (
-                        <IconLogout2 className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
-                      ),
+                        label: "Keluar",
+                        href: "logout",
+                        icon: (
+                          <IconLogout2 className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
+                        ),
                       }}
-                    />
-                	<div>
+                      />                	
+                      <div>
                     	<SidebarLink
                         	link={{
                             	label: user.name,
