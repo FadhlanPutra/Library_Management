@@ -108,7 +108,7 @@ export default function Login({
 
                 <div className="mt-4 flex items-center flex-col justify-end">
 
-                    <PrimaryButton className="" disabled={processing}>
+                    <PrimaryButton className="" disabled={processing} rel="prefetch">
                         Log in
                     </PrimaryButton>
                     <Link className='text-white mt-2 text-sm fint-light underline hover:text-gray-900' href={route('register')}>Kamu Belum Punya Akun?</Link>

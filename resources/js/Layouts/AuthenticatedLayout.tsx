@@ -73,6 +73,7 @@ const Authenticated = React.memo(function Authenticated({
               {
                 label: "Keluar",
                 href: "logout",
+                isLogout: 'true',
                 icon: (
                   <IconLogout2 className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
                 ),
@@ -92,6 +93,16 @@ const Authenticated = React.memo(function Authenticated({
                         	))}
                     	</div>
                 	</div>
+                    <SidebarLink
+                    
+                      link={{
+                      label: "Keluar",
+                      href: "logout",
+                      icon: (
+                        <IconLogout2 className="text-neutral-700 dark:text-neutral-200 h-5 w-5 flex-shrink-0" />
+                      ),
+                      }}
+                    />
                 	<div>
                     	<SidebarLink
                         	link={{
@@ -131,6 +142,8 @@ const Authenticated = React.memo(function Authenticated({
     	</div>
 	);
 })
+
+
 
 // Komponen Logo untuk sidebar
 function Logo() {
