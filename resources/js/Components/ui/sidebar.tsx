@@ -210,6 +210,7 @@ export const SidebarLinkLogout = ({
   const { open, animate } = useSidebar();
   return (
     <Link 
+      as = "button"
       method = "post"
       href={link.href}
       className={cn(
