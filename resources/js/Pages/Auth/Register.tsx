@@ -3,8 +3,22 @@ import InputLabel from '@/Components/InputLabel';
 import PrimaryButton from '@/Components/PrimaryButton';
 import TextInput from '@/Components/TextInput';
 import GuestLayout from '@/Layouts/GuestLayout';
-import { Head, Link, useForm } from '@inertiajs/react';
+import { Head, Link, router, useForm } from '@inertiajs/react';
 import { FormEventHandler } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+// import { idLogout, loadingLogin, loadingRegister, notifregister } from './notiftoast';
+import { dismiss, logoutLoading } from './notiftoast';
+import  NProgress  from 'nprogress';
+
+
+toast.clearWaitingQueue();
+toast.dismiss();
+toast("Silahkan Lakukan Register");
+// toast.clearWaitingQueue();
+// toast.clearWaitingQueue();
+// toast.dismiss(loadingLogin);
+// toast.dismiss(loadingRegister);
+
 
 export default function Register() {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -13,7 +27,6 @@ export default function Register() {
         password: '',
         password_confirmation: '',
     });
-
     const submit: FormEventHandler = (e) => {
         e.preventDefault();
 
@@ -115,7 +128,7 @@ export default function Register() {
 
                 <div className="mt-6 flex items-center justify-end">
 
-                    <PrimaryButton className="" disabled={processing}>
+                    <PrimaryButton onClick={dismiss} className="" disabled={processing}>
                         Daftar Sekarang
                     </PrimaryButton>
                 </div>

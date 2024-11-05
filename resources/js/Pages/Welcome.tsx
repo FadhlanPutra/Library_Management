@@ -1,11 +1,29 @@
 import { PageProps } from '@/types';
-import { Head, Link } from '@inertiajs/react';
+import { Head, Link, router, usePage } from '@inertiajs/react';
+import { toast, ToastContainer } from 'react-toastify';
+import React, { useState } from 'react';
+// import { idLogout, loadingLogin, loadingRegister, notiflogin } from './Auth/notiftoast';
+// import { idLogout } from './Auth/notiftoast';
+import axios from 'axios';
+import { use } from 'framer-motion/m';
+import NProgress from 'nprogress';
+import { idLoading } from '../app';
 
-export default function Welcome({
-    auth,
+
+
+// toast.clearWaitingQueue();
+        // toast.dismiss(loadingLogin);
+        // toast.dismiss(loadingRegister);
+        toast.clearWaitingQueue();
+        toast.dismiss(idLoading);
+        
+        export default function Welcome({
+            auth,
     laravelVersion,
     phpVersion,
 }: PageProps<{ laravelVersion: string; phpVersion: string }>) {
+    // toast.clearWaitingQueue()
+                
     const handleImageError = () => {
         document
             .getElementById('screenshot-container')
@@ -366,10 +384,11 @@ export default function Welcome({
                 <div className='flex flex-col justify-center items-center w-1/2 text-center'>
                     <h1 className='font-bold text-2xl mt-2 mb-2'>Welcome to Library Pesat IT XPRO</h1>
                     <p className='text-center font-medium'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis quibusdam placeat, veritatis iure tempore vitae, dicta autem aspernatur praesentium fuga eum enim? Sunt minus temporibus repellat autem, asperiores recusandae minima!</p>
-                    <Link rel="prefetch" href={route('login')} className='bg-[#6E987C] px-6 py-4 p-2 rounded-lg text-white mt-2'>Login</Link>
+                    <Link rel="prefetch"  href={route('login')} className='bg-[#6E987C] px-6 py-4 p-2 rounded-lg text-white mt-2'>Login</Link>
                 </div> 
             </div>
             
         </>
     );
 }
+

@@ -4,9 +4,28 @@ import InputLabel from '@/Components/InputLabel';
 import PrimaryButton from '@/Components/PrimaryButton';
 import TextInput from '@/Components/TextInput';
 import GuestLayout from '@/Layouts/GuestLayout';
-import { Head, Link, useForm } from '@inertiajs/react';
-import { FormEventHandler } from 'react';
+import { Head, Link, router, useForm, usePage } from '@inertiajs/react';
+import { FormEventHandler, useEffect } from 'react';
 import React, { useRef, useState } from 'react';
+import { Suspense } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+// import { idLogout, loadingLogin, loadingRegister, notiflogin, notifregister } from './notiftoast';
+import { dismiss, logoutLoading } from './notiftoast';
+import 'react-toastify/dist/ReactToastify.css';
+import NProgress from 'nprogress';
+// import { idRegister } from './Register';
+
+toast.clearWaitingQueue();
+toast.dismiss();
+toast("Login Terlebih Dahulu");
+// toast.clearWaitingQueue();
+
+// toast.dismiss();
+// toast.clearWaitingQueue();
+// toast.dismiss(loadingRegister);
+toast.dismiss(logoutLoading);
+// toast.dismiss(idRegister);
+
 
 export default function Login({
     status,
@@ -15,15 +34,19 @@ export default function Login({
     status?: string;
     canResetPassword: boolean;
 }) {
+    
+    // toast.clearWaitingQueue();
+    // toast.dismiss();
+    
     const { data, setData, post, processing, errors, reset } = useForm({
         email: '',
         password: '',
         remember: false,
     });
-
+    
     const submit: FormEventHandler = (e) => {
         e.preventDefault();
-
+        
         post(route('login'), {
             onFinish: () => reset('password'),
         });
@@ -108,7 +131,8 @@ export default function Login({
 
                 <div className="mt-4 flex items-center flex-col justify-end">
 
-                    <PrimaryButton className="" disabled={processing} rel="prefetch">
+
+                    <PrimaryButton onClick={dismiss} className="" disabled={processing} rel="prefetch">
                         Log in
                     </PrimaryButton>
                     <Link className='text-white mt-2 text-sm fint-light underline hover:text-gray-900' href={route('register')}>Kamu Belum Punya Akun?</Link>
@@ -117,4 +141,5 @@ export default function Login({
         </GuestLayout>
     );
 }
+
 

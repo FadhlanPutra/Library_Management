@@ -6,14 +6,10 @@ import { AnimatePresence, motion } from "framer-motion";
 import { IconMenu2, IconX } from "@tabler/icons-react";
 import { InertiaLinkProps, Link } from "@inertiajs/react";
 import { METHODS } from "http";
+import { notiflogout } from '../../Pages/Auth/notiftoast';
+import { ButtonHTMLAttributes } from 'react';
 
 interface Links {
-  label: string;
-  href: string;
-  icon: React.JSX.Element | React.ReactNode;
-}
-
-interface Linkslogout {
   label: string;
   href: string;
   icon: React.JSX.Element | React.ReactNode;
@@ -202,14 +198,19 @@ export const SidebarLinkLogout = ({
   link,
   className,
   ...props
-}: {
+}:{
+  
   link: Links;
   className?: string;
   props?: InertiaLinkProps;
+  onClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void;
+  // onSuccess?: () => void;
+
 }) => {
   const { open, animate } = useSidebar();
   return (
     <Link 
+      // onSuccess={notiflogout}
       as = "button"
       method = "post"
       href={link.href}
